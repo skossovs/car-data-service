@@ -22,11 +22,12 @@ def isFactEmpty(aString):
     return False
 
 class Car:
-    def __init__(self, make, model, mileage, price, originalName):
+    def __init__(self, make, model, mileage, year, price, originalName):
         self.make = make
         self.model = model
         self.mileage = mileage
         self.price = price
+        self.year = year
         self.originalName = originalName
 
 def parseExtractedFields(name: any, makeFilter:any, miles: any, price: any):
@@ -41,7 +42,7 @@ def parseExtractedFields(name: any, makeFilter:any, miles: any, price: any):
     miles = str.replace(miles.string,',','')
     miles = str.replace(miles,' miles','')
     price = str.replace(price.string,',','')
-    return Car(make, model, miles, price, originalName)
+    return Car(make, model, miles, year, price, originalName)
 
 def obj_dict(obj):
     return obj.__dict__
